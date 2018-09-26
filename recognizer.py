@@ -42,7 +42,8 @@ while True:
         # Check if confidence is less than 100 | "0" is perfect match
         if (confidence < 100):
             id = names[id] # displays names
-            #id = id # displays IDs
+            #-------------!!!!!!!!!!!!!!-----------------
+            #id = id # displays IDs this part will send the ID with a service to the welcome script
             confidence = "  {0}%".format(round(100 - confidence))
         else:
             id = "unknown"

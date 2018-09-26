@@ -5,11 +5,11 @@ import os
 
 # Path for face image database
 path = 'dataset'
-def rmHidden (pathroute):
-    os.system("cd /" + pathroute)
-    os.system("rm .DS_Store")
-    os.system("cd ..")
-rmHidden(path)
+# def rmHidden (pathroute):
+#     os.system("cd /" + pathroute)
+#     os.system("rm .DS_Store")
+#     os.system("cd ..")
+# rmHidden(path)
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 #recognizer = cv2.face.createLBPHFaceRecognizer()
 detector = cv2.CascadeClassifier("haarcascade_frontalface_default.xml");
@@ -20,13 +20,14 @@ def getImagesAndLabels(path):
     faceSamples=[]
     ids = []
     for imagePath in imagePaths:
-        PIL_img = Image.open(imagePath).convert('L') # convert it to grayscale
-        img_numpy = np.array(PIL_img,'uint8')
-        id = int(os.path.split(imagePath)[-1].split(".")[1])
-        faces = detector.detectMultiScale(img_numpy)
-        for (x,y,w,h) in faces:
-            faceSamples.append(img_numpy[y:y+h,x:x+w])
-            ids.append(id)
+        if imagePath.endswith(".jpg"):
+            PIL_img = Image.open(imagePath).convert('L') # convert it to grayscale
+            img_numpy = np.array(PIL_img,'uint8')
+            id = int(os.path.split(imagePath)[-1].split(".")[1])
+            faces = detector.detectMultiScale(img_numpy)
+            for (x,y,w,h) in faces:
+                faceSamples.append(img_numpy[y:y+h,x:x+w])
+                ids.append(id)
     return faceSamples,ids
 
 print ("\n [INFO] Training faces. It will take a few seconds. Wait ...")
