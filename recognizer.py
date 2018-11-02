@@ -42,7 +42,8 @@ while True:
         # Check if confidence is less than 100 | "0" is perfect match
         if (confidence < 100):
             id = names[id] # displays names
-            #-------------!!!!!!!!!!!!!!-----------------
+            #-------------!!!!!!!!!!!!!!----------------- turn names array into 2D with false&true
+            #values to just send service once a face is recognized
             #id = id # displays IDs this part will send the ID with a service to the welcome script
             confidence = "  {0}%".format(round(100 - confidence))
         else:
