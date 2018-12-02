@@ -13,7 +13,7 @@ font = cv2.FONT_HERSHEY_SIMPLEX
 id = 0
 
 # names related to ids: e.g. David Hoyos is id 1 when data_gathering and displayed with diff ID
-names = ['none', 'User: DH210389', 'Alejandro', 'Adriana', 'Paola', 'DOwen','Jorge','Next']
+names = ['none', 'David', 'Alejandro', 'Adriana', 'Paola', 'DOwen','Jorge','Next']
 
 # Initialize and start realtime video capture
 cam = cv2.VideoCapture(0)
