@@ -1,4 +1,9 @@
-Prodigious Latam Face Recognition Science Fair Project Readme
+ReadMe
+
+Best Prodigious Latam Science Fair Project
+Face Recognition using ML engine OpenCV with python
+
+Video DEMO Link here: https://drive.google.com/file/d/1V9KgtXAWNZ_lkz2bQI8ibw58dQVIeSPI/view?usp=sharing
 
 Steps:
 1 - face_detection.py 
